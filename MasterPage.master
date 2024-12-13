@@ -18,9 +18,9 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="Homepage.aspx">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="Products.aspx">Products</a></li>
+                    <li><a href="Aboutus.aspx">About Us</a></li>
+                    <li><a href="Contactus.aspx">Contact</a></li>
                 </ul>
                 <div class="login-btn">
                     <a href="Login.aspx" class="button">Login</a>
