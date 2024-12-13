@@ -19,13 +19,13 @@
                 <a href="#" class="buy-now-btn">Buy Now</a>
             </div>
             <div class="product-item">
-                <img src="Images/living-room-8480223.jpg" alt="Classic Sofa">
+                <img src="Images/Sofa_img2.jpg" alt="Classic Sofa">
                 <h3>Classic Sofa</h3>
                 <p>Elegant design with premium materials for a timeless look.</p>
                 <a href="#" class="buy-now-btn">Buy Now</a>
             </div>
             <div class="product-item">
-                <img src="Images/sofa-6185021.jpg" alt="Recliner Sofa">
+                <img src="Images/Sofa_img1.jpeg" alt="Recliner Sofa">
                 <h3>Recliner Sofa</h3>
                 <p>Luxurious recliner sofa for ultimate relaxation.</p>
                 <a href="#" class="buy-now-btn">Buy Now</a>
@@ -64,7 +64,7 @@
         <div class="product-grid">
             <div class="product-item">
                 <img src="Images/chair1.jpg" alt="Office Chair">
-                <h3>Office Chair</h3>
+                <h3>Office Chair</h3><a href="MasterPage.master">MasterPage.master</a>
                 <p>Ergonomic design for comfortable working hours.</p>
                 <a href="#" class="buy-now-btn">Buy Now</a>
             </div>

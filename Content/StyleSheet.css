@@ -242,7 +242,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color:Silver;
     color: #333;
 }
 
@@ -250,7 +250,7 @@ body {
     margin: 50px auto;
     padding: 20px;
     max-width: 1200px;
-    background: #fff;
+    background: #D6CFB4;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -259,7 +259,7 @@ body {
     text-align: center;
     font-size: 32px;
     color: #fff;
-    background-color: #0078D7;
+    background-color: #1b2021;
     padding: 20px 0;
     margin: -20px -20px 30px -20px;
     border-radius: 8px 8px 0 0;
@@ -271,7 +271,7 @@ body {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three items per row */
-    gap: 30px; /* Increased gap for better spacing */
+    gap: 20px; /* Increased gap for better spacing */
     justify-items: center; /* Center the items horizontally */
     align-items: stretch; /* Stretch items to fill their container height */
     grid-auto-rows: 1fr; /* Ensure all items have equal height */
@@ -289,12 +289,12 @@ body {
     justify-content: space-between; /* Space out content inside the item */
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%; /* Ensure item takes full available width */
+    width: 85%; /* Ensure item takes full available width */
     max-width: 350px; /* Optional: limit the maximum width for better spacing */
 }
 
 .product-item img {
-    width: 80%; /* Adjust image size to keep it proportionate */
+    width: 100%; /* Adjust image size to keep it proportionate */
     height: auto;
     display: block;
     margin-bottom: 10px;
@@ -322,7 +322,7 @@ body {
     display: inline-block;
     margin: 10px 0;
     padding: 10px 20px;
-    background-color: #0078D7;
+    background-color: #333;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
@@ -335,6 +335,141 @@ body {
     background-color: #005bb5;
 }
 
+/* AboutUs.css */
+
+/* General Styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/* About Us Section */
+.about-us-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.about-us-section h1 {
+    font-size: 3em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-us-section h2 {
+    font-size: 2em;
+    color: #555;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.about-us-section p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.about-us-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.about-us-section ul li {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.about-us-section ul li strong {
+    color: #333;
+}
+
+/* Team Section 
+.team-section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.team-section h2 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.team-member {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 5px solid #eee;
+}
+
+.team-member h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 10px;
+}*/
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-us-section h1 {
+        font-size: 2.5em;
+    }
+
+    .team-section h2 {
+        font-size: 2em;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+}
 
 
 
