@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title><%: Page.Title %></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -18,12 +18,21 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="Homepage.aspx">Home</a></li>
-                    <li><a href="Products.aspx">Products</a></li>
+                    <li class="dropdown">
+                        <a href="Products.aspx">Products</a>
+                        <div class="dropdown-content">
+                            <a href="Sofas.aspx">Sofas</a>
+                            <a href="Curtains.aspx">Curtains</a>
+                            <a href="Beds.aspx">Beds</a>
+                            <a href="Chairs.aspx">Chairs</a>
+                           <%-- <a href="AllProducts.aspx">All Products</a>--%>
+                        </div>
+                    </li>
                     <li><a href="Aboutus.aspx">About Us</a></li>
-                    <li><a href="Contactus.aspx">Contact</a></li>
+                    <li><a href="Contactus.aspx">Contact Us</a></li>
                 </ul>
                 <div class="login-btn">
-                    <a href="Login.aspx" class="button">Login</a>
+                    <a href="Loginpage.aspx" class="button">Login</a>
                 </div>
             </nav>
         </header>
