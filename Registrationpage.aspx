@@ -1,23 +1,24 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Loginpage.aspx.cs" Inherits="Loginpage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Registrationpage.aspx.cs" Inherits="Registrationpage" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Furniture Shop</title>
+    <title>Register | Furniture Shop</title>
     <style>
         /* General Reset */
         * {
-            margin:10;
-            padding: 10;
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         /* Body */
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #000000, #555555); /* Elegant, warm background for a furniture shop */
+            background: linear-gradient(to right, #000000, #555555);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,7 +26,7 @@
             margin: 0;
         }
 
-        /* Login Container */
+        /* Container */
         .login-container {
             display: flex;
             justify-content: center;
@@ -39,7 +40,7 @@
             margin: 10px;
         }
 
-        /* Login Form */
+        /* Form */
         .login-form {
             width: 100%;
             padding: 30px;
@@ -54,7 +55,7 @@
         }
 
         .input-group {
-            margin-bottom: 0px;
+            margin-bottom: 5px;
             text-align: left;
         }
 
@@ -119,37 +120,42 @@
             margin-top: 10px;
             text-align: center;
         }
-
-        .error-message span {
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
     <div class="login-container">
         <div class="login-form">
-            <h2>WELCOME TO<br />THE DECOR HUB</h2>
+            <h2>CREATE YOUR ACCOUNT</h2>
             <form id="Form1" runat="server">
-                <!-- Username Field -->
+                <!-- Full Name -->
                 <div class="input-group">
-                    <label for="username">Username</label>
-                    <asp:TextBox ID="txtUsername" runat="server" Placeholder="Enter your username" CssClass="input-group" AutoComplete="off" />
+                    <label for="fullname">Full Name</label>
+                    <asp:TextBox ID="txtFullName" runat="server" Placeholder="Enter your full name" CssClass="input-group" AutoComplete="off" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                        ControlToValidate="txtUsername" ErrorMessage="Please enter your username" 
+                        ControlToValidate="txtFullName" ErrorMessage="Please enter your full name" 
+                        Font-Bold="False" Font-Size="Small" ForeColor="#F20000" />
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" Placeholder="Enter your email address" CssClass="input-group" AutoComplete="off" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="txtEmail" ErrorMessage="Please enter your email address" 
                         Font-Bold="False" Font-Size="Small" ForeColor="#F20000" />
                     <br />
-                    <asp:RegularExpressionValidator ID="RegexUsernameValidator" runat="server" 
-                        ControlToValidate="txtUsername" 
-                        ValidationExpression="^[a-zA-Z0-9]{5,20}$" 
-                        ErrorMessage="Username must be 5-20 characters long, and contain only letters and numbers" 
+                    <asp:RegularExpressionValidator ID="RegexEmailValidator" runat="server" 
+                        ControlToValidate="txtEmail" 
+                        ValidationExpression="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" 
+                        ErrorMessage="Please enter a valid email address" 
                         ForeColor="#F20000" Font-Size="Small" />
                 </div>
 
-                <!-- Password Field -->
+                <!-- Password -->
                 <div class="input-group">
                     <label for="password">Password</label>
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Placeholder="Enter your password" CssClass="input-group" AutoComplete="off" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                         ControlToValidate="txtPassword" ErrorMessage="Please enter your password" 
                         Font-Bold="False" Font-Size="Small" ForeColor="#F20000" />
                     <br />
@@ -160,8 +166,9 @@
                         ForeColor="#F20000" Font-Size="Small" />
                 </div>
 
-                <!-- Login Button -->
-                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn" OnClick="btnLogin_Click" />
+                <!-- Register Button -->
+                <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn" 
+                    onclick="btnRegister_Click" />
 
                 <!-- Error Message -->
                 <div class="error-message">
@@ -170,8 +177,7 @@
             </form>
 
             <div class="links">
-                <a href="Forgotpassword.aspx">Forgot Password?</a>
-                <a href="Registrationpage.aspx">Create an Account</a>
+                <a href="Loginpage.aspx">Already have an account? Log in</a>
             </div>
         </div>
     </div>
