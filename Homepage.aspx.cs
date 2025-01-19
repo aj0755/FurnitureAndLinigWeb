@@ -11,4 +11,8 @@ public partial class Homepage : System.Web.UI.Page
     {
 
     }
+    protected void btnShopNowBanner_Click(object sender, EventArgs e)
+    {
+
+    }
 }
