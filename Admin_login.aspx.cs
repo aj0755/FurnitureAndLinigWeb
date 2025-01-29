@@ -8,19 +8,19 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-public partial class Loginpage : System.Web.UI.Page
+public partial class Admin_login : System.Web.UI.Page
 {
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
     protected void Page_Load(object sender, EventArgs e)
     {
-        lblErrorMessage.Visible = true; // Hide error message initially
+        lblErrorMessage.Visible = true;
     }
     protected void btnLogin_Click(object sender, EventArgs e)
     {
         try
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TDH_User WHERE Email = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'");
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Admin_login WHERE U_name = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'");
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -28,8 +28,9 @@ public partial class Loginpage : System.Web.UI.Page
             if (sdr.HasRows)
             {
                 Session["UserEmail"] = txtUsername.Text;
-                string script = "alert('Login successful!'); window.location='Homepage.aspx';";
-                ClientScript.RegisterStartupScript(this.GetType(), "LoginSuccess", script, true);
+                lblErrorMessage.Text = "Login successful!";
+                lblErrorMessage.ForeColor = System.Drawing.Color.Green;
+                Response.Redirect("Admin_homepage.aspx");
             }
             else
             {

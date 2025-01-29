@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Loginpage.aspx.cs" Inherits="Loginpage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Admin_login.aspx.cs" Inherits="Admin_login" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +18,7 @@
 /* Body */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #000000, #555555); /* Elegant, warm background for a furniture shop */
+    background: linear-gradient(to right, #555555, #000000); /* Elegant, warm background for a furniture shop */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,20 +182,21 @@ h2 {
 <body>
     <div class="login-container">
         <div class="login-form">
-            <h2>WELCOME TO<br />THE DECOR HUB</h2>
+            <h2>Admin login page</h2>
             <form id="Form1" runat="server">
+                <!-- Username Field -->
                 <div class="input-group">
-                    <label for="username">Email</label>
+                    <label for="username">Username</label>
                     <asp:TextBox ID="txtUsername" runat="server" Placeholder="Enter your username" CssClass="input-group" AutoComplete="off" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                        ControlToValidate="txtUsername" ErrorMessage="Please enter your email." 
+                        ControlToValidate="txtUsername" ErrorMessage="Please enter your username" 
                         Font-Bold="False" Font-Size="Small" ForeColor="#F20000" />
                     <br />
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                        ControlToValidate="txtUsername" ErrorMessage="Please enter right email address." 
-                        Font-Size="Small" ForeColor="#F20000" 
-                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                    <br />
+                    <asp:RegularExpressionValidator ID="RegexUsernameValidator" runat="server" 
+                        ControlToValidate="txtUsername" 
+                        ValidationExpression="^[a-zA-Z0-9]{5,20}$" 
+                        ErrorMessage="Username must be 5-20 characters long, and contain only letters and numbers" 
+                        ForeColor="#F20000" Font-Size="Small" />
                 </div>
 
                 <!-- Password Field -->
@@ -207,13 +209,14 @@ h2 {
                     <br />
                     <asp:RegularExpressionValidator ID="RegexPasswordValidator" runat="server" 
                         ControlToValidate="txtPassword" 
-                        ValidationExpression="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&amp;]{8,}$" 
+                        ValidationExpression="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&amp;amp;]{8,}$" 
                         ErrorMessage="Password must be 6-20 characters long, and include both letters and numbers" 
                         ForeColor="#F20000" Font-Size="Small" />
                 </div>
 
                 <!-- Login Button -->
-                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn" OnClick="btnLogin_Click" />
+                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn" 
+                    onclick="btnLogin_Click" />
 
                 <!-- Error Message -->
                 <div class="error-message">

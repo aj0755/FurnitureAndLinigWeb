@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="AdminMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title><%: Page.Title %></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Content/StyleSheet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Space between "Admin Panel" and the button */
+        }
+
+        .header-right span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .button {
+            background-color: white;
+            color: #4CAF50;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            color: white;
+        }
+
+        .admin-panel {
+            display: flex;
+            min-height: calc(100vh - 70px);
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            display: block;
+            padding: 8px 10px;
+            border-radius: 4px;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div class="header-left">
+                The Decor Hub
+            </div>
+            <div class="header-right">
+                <span>Admin Panel</span>
+                <a href="Admin_homepage.aspx" class="button">Logout</a>
+            </div>
+        </header>
+
+        <div class="admin-panel">
+            <aside class="sidebar">
+                <ul>
+                    <li><a href="Admin_Dashboard.aspx">Dashboard</a></li>
+                    <li><a href="ManageProducts.aspx">Manage Products</a></li>
+                    <li><a href="Orders.aspx">Orders</a></li>
+                    <li><a href="Admin_User.aspx">Users</a></li>
+                    <li><a href="Category.aspx">Category</a></li>
+                    <li><a href="Admin_Payment.aspx">Payment</a></li>
+                </ul>
+            </aside>
+
+            <section class="content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+        </div>
+    </form>
+</body>
+</html>
+
+

@@ -15,4 +15,8 @@ public partial class Homepage : System.Web.UI.Page
     {
 
     }
+    protected void btnReadMoreAbout_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Aboutus.aspx");
+    }
 }
