@@ -25,7 +25,26 @@
             margin: 0;
         }
 
-        /* Container */
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        /* Fade-in effect for the container */
         .login-container {
             display: flex;
             justify-content: center;
@@ -37,6 +56,15 @@
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             margin: 10px;
+
+            /* Fade-in animation */
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Add fade-out by applying this class dynamically in the backend if needed */
+        .fade-out {
+            animation: fadeOut 1s ease-in-out;
+            animation-fill-mode: forwards; /* Keep the element hidden after fade-out */
         }
 
         /* Form */
@@ -137,6 +165,7 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server" 
                         ControlToValidate="txtEmail" ErrorMessage="Please enter your email address" 
                         ForeColor="Red" />
+                    <br />
                     <asp:RegularExpressionValidator ID="RegexEmailValidator" runat="server" 
                         ControlToValidate="txtEmail" 
                         ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
@@ -146,7 +175,7 @@
 
                 <!-- Reset Button -->
                 <asp:Button ID="btnSendResetLink" runat="server" Text="Send Reset Link" 
-                    CssClass="btn" onclick="btnSendResetLink_Click" />
+                    CssClass="btn" onclick="btnSendResetLink_Click1" />
 
                 <!-- Message -->
                 <div class="error-message">

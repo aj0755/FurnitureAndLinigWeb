@@ -12,7 +12,7 @@ public partial class Forgotpassword : System.Web.UI.Page
     {
 
     }
-    protected void btnSendResetLink_Click(object sender, EventArgs e)
+    protected void btnSendResetLink_Click1(object sender, EventArgs e)
     {
         string userEmail = txtEmail.Text.Trim();
 
